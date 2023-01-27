@@ -4,9 +4,10 @@ class ListNode:
         self.val = val
         self.next = next
         
+import collections
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        q = []
+        q: Deque = collections.deque()
         
         if not head:
             return True
@@ -18,7 +19,7 @@ class Solution:
             node = node.next
             
         while len(q) > 1:
-            if q.pop(0) != q.pop():
+            if q.popleft() != q.pop():
                 return False
             
         return True
