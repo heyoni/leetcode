@@ -11,10 +11,11 @@ class Solution:
         if not head:
             return True
         
-        while head is not None:
-            q.append(head.val)
+        node = head
+        while node is not None:
+            q.append(node.val)
             
-            head = head.next
+            node = node.next
             
         while len(q) > 1:
             if q.pop(0) != q.pop():
